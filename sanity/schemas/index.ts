@@ -1,0 +1,9 @@
+export { services } from "./services";
+export { brands } from "./brands";
+export { contact } from "./contact";
+export { experiences } from "./experiences";
+export { skills } from "./skills";
+export { testimonials } from "./testimonials";
+export { workExperience } from "./workExperience";
+export { works } from "./works";
+export { abouts } from "./abouts";
