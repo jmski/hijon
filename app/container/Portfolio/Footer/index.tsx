@@ -9,7 +9,7 @@ import {
 } from "@/app/constants/footerData";
 
 const Footer = () => (
-  <section id="footer" className="bg-bluey text-white p-8 md:p-4">
+  <section id="footer" className="p-8 md:p-4">
     <div className="flex justify-between items-start flex-row flex-wrap w-full text-left">
       <div className="mt-4 mx-0 sm:m-4 w-64 flex flex-col gap-4">
         <a href="/">

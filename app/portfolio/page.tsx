@@ -9,8 +9,9 @@ import {
   Footer,
   Contact,
   Skills,
+  Brand,
 } from "../container";
-import { Navbar, Sidemenu } from "../components";
+import { Navbar, SideMenu } from "../components";
 import { navData } from "../constants/navData";
 
 const portfolio = () => {
@@ -18,11 +19,12 @@ const portfolio = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <>
-      <main>
+      <main className="gradient-bg">
         <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen} navData={navData} />
-        <Sidemenu menuOpen={menuOpen} navData={navData} />
+        <SideMenu menuOpen={menuOpen} navData={navData} />
         <Header />
         <Service />
+        <Brand />
         <Featured />
         <Projects />
         <Testimonials />

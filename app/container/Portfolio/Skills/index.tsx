@@ -37,8 +37,8 @@ const Skills = () => {
   }
 
   return (
-    <section className="bg-white w-full min-h-screen flex flex-col justify-center items-center">
-      <h2 className="text-black font-extrabold text-4xl text-center capitalize">
+    <section className="w-full min-h-screen flex flex-col justify-center items-center">
+      <h2 className="font-extrabold text-4xl text-center capitalize">
         Skills & Experiences
       </h2>
       <div className="w-full lg:w-4/5 mt-12 flex flex-col lg:flex-row">
@@ -62,20 +62,18 @@ const Skills = () => {
                   width={100}
                 />
               </div>
-              <p className="font-medium mt-2 text-black">{skill.name}</p>
+              <p className="font-medium mt-2">{skill.name}</p>
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex flex-1 text-black flex-start items-start flex-col mt-8">
+        <div className="flex flex-1 flex-start items-start flex-col mt-8">
           {experiences.map((experience: ExperienceProps) => (
             <motion.div
               className="w-full flex flex-start items-start my-1 mx-0 overflow-y-hidden"
               key={experience.year}
             >
               <div className="mr-12">
-                <p className="text-sm text-left leading-6 text-slate-500">
-                  {experience.year}
-                </p>
+                <p className="text-sm text-left leading-6">{experience.year}</p>
               </div>
               <motion.div className="flex-1 flex">
                 {experience.works.map((work: ExperienceProps) => (

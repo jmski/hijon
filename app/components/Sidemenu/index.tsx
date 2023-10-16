@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 import logo from "@/app/assets/logo.svg";
 
-interface SidemenuProps {
+interface SideMenuProps {
   menuOpen: boolean;
   navData: { title: string; href: string }[];
 }
 
-const Sidemenu: React.FC<SidemenuProps> = ({ menuOpen, navData }) => {
+const SideMenu: React.FC<SideMenuProps> = ({ menuOpen, navData }) => {
   return (
     <div
       className={`bg-bluey w-1/2 h-screen fixed ease-in-out duration-500 z-20
@@ -16,10 +16,7 @@ const Sidemenu: React.FC<SidemenuProps> = ({ menuOpen, navData }) => {
       <ul className="px-4 pt-4">
         <Image src={logo} alt="logo" color="#fff" />
         {navData.map((element, index) => (
-          <li
-            key={index}
-            className="p-4 rounded-lg transition duration-200 hover:bg-coral hover:text-bluey"
-          >
+          <li key={index} className="p-4 square hover:square">
             <a href={element.href}>{element.title}</a>
           </li>
         ))}
@@ -28,4 +25,4 @@ const Sidemenu: React.FC<SidemenuProps> = ({ menuOpen, navData }) => {
   );
 };
 
-export default Sidemenu;
+export default SideMenu;

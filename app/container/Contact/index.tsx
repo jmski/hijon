@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import images from "@/app/constants/images";
 import { client } from "@/sanity/client";
-import { ContainerWrap } from "@/app/wrapper";
 
 interface ContactProps {}
 
@@ -44,13 +43,13 @@ const Contact: React.FC<ContactProps> = () => {
 
   return (
     <>
-      <section className="bg-slate-200 text-black w-full min-h-screen flex flex-col justify-center items-center">
+      <section className="w-full min-h-screen flex flex-col justify-center items-center">
         <h2 className="font-bold capitalize text-4xl text-center overflow-y-hidden">
           Take a coffee & chat with me
         </h2>
 
         <div className="w-3/5 flex justify-evenly items-center flex-wrap mt-12 mx-8 mb-8">
-          <div className="bg-mellow w-72 flex flex-row justify-start items-center rounded-lg p-4 mx-8 mb-8 mt-12 cursor-pointer">
+          <div className="bg-mellow text-bluey w-72 flex flex-row justify-start items-center rounded-lg p-4 mx-8 mb-8 mt-12 cursor-pointer">
             <Image className="w-10 h-10 mx-4" src={images.email} alt="email" />
             <a
               href="mailto:geluajm@gmail.com"

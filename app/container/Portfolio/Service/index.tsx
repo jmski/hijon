@@ -18,8 +18,8 @@ const Service = () => {
   }
 
   return (
-    <section className="bg-white w-full min-h-screen flex flex-col items-center justify-center">
-      <h2 className="text-4xl font-extrabold text-center text-black">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center">
+      <h2 className="text-4xl font-extrabold text-center">
         I Know that <span>Good Design</span> <br />
         means <span>Good Business</span>
       </h2>
@@ -40,16 +40,10 @@ const Service = () => {
               height={200}
               width={200}
             />
-            <h2
-              className="font-extrabold text-left text-black"
-              style={{ marginTop: 20 }}
-            >
+            <h2 className="font-extrabold text-left" style={{ marginTop: 20 }}>
               {service.title}
             </h2>
-            <p
-              className="text-sm text-left text-slate-500"
-              style={{ marginTop: 10 }}
-            >
+            <p className="text-sm text-left" style={{ marginTop: 10 }}>
               {service.description}
             </p>
           </motion.div>

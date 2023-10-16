@@ -9,6 +9,11 @@ import {
   workExperience,
   works,
   abouts,
+  product,
+  banner,
+  social,
+  store,
+  resource,
 } from "./schemas";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -22,5 +27,10 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     workExperience,
     works,
     abouts,
+    product,
+    banner,
+    social,
+    store,
+    resource,
   ],
 };
