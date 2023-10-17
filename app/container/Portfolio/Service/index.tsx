@@ -19,7 +19,7 @@ const Service = () => {
 
   return (
     <section className="w-full min-h-screen flex flex-col items-center justify-center">
-      <h2 className="text-4xl font-extrabold text-center">
+      <h2 className="text-4xl text-center">
         I Know that <span>Good Design</span> <br />
         means <span>Good Business</span>
       </h2>

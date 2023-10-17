@@ -7,7 +7,6 @@ import {
   Projects,
   Testimonials,
   Footer,
-  Contact,
   Skills,
   Brand,
 } from "../container";
@@ -29,7 +28,6 @@ const portfolio = () => {
         <Projects />
         <Testimonials />
         <Skills />
-        <Contact />
         <Footer />
       </main>
     </>

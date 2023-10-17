@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Button from "../Button";
-import logo from "@/app/assets/logo.svg";
-import { PiHamburger } from "react-icons/pi";
+import { PiHamburger, PiShoppingCartSimpleLight } from "react-icons/pi";
 import { RiCloseLine } from "react-icons/ri";
+import { images } from "@/app/constants";
 
 export interface NavbarProps {
   toggleMenu: () => void;
@@ -17,35 +16,32 @@ const Navbar: React.FC<NavbarProps> = ({ toggleMenu, menuOpen, navData }) => {
       <div className="flex items-center justify-between">
         <div>
           <a href="#gang">
-            <Image src={logo} alt="logo" height={50} />
+            <Image src={images.logo_nav} alt="logo" height={40} />
           </a>
         </div>
         <ul className="md:flex items-center gap-8 hidden">
           {navData.map((element, index) => (
-            <li className="cursor-pointer capitalize font-bold" key={index}>
+            <li
+              className="cursor-pointer uppercase text-xs tracking-loose font-light"
+              key={index}
+            >
               <a href={element.href}>{element.title}</a>
             </li>
           ))}
         </ul>
         <div className="flex gap-4">
-          <Button
-            buttonColor="bg-bluey-light"
-            textColor="text-bluey"
-            label="Connect"
-            link="/home"
-            showMobile={false}
-          />
+          <PiShoppingCartSimpleLight size={30} />
           <div className="md:hidden">
             {menuOpen ? (
               <RiCloseLine
                 className="ease-in-out duration-500"
-                size={40}
+                size={30}
                 onClick={toggleMenu}
               />
             ) : (
               <PiHamburger
                 className="ease-in-out duration-500"
-                size={40}
+                size={30}
                 onClick={toggleMenu}
               />
             )}

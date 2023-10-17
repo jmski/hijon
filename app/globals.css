@@ -34,47 +34,23 @@ body {
   scroll-behavior: smooth;
 }
 
-.filtergang {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
 }
-
-.app__container {
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: row;
+::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
 }
-
-.app__flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skills-tooltip {
-  max-width: 300px !important;
-  background-color: #fff !important;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 5px !important;
-  padding: 1rem !important;
-  color: #e2e2e2 !important;
-  text-align: center !important;
-  line-height: 1.5 !important;
-  opacity: 1 !important;
-
-  @media screen and (min-width: 2000px) {
-    font-size: 1.75rem !important;
-    max-width: 500px !important;
-    line-height: 2 !important;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 1;
 }
 
 @layer utilities {
   /* background radial gradient */
   .gradient-bg {
-    --foreground: rgb(84, 87, 91) 0%;
+    --foreground: rgb(43, 43, 43) 0%;
     --background: rgb(0, 0, 0) 25%;
 
     background: -moz-radial-gradient(
@@ -111,11 +87,7 @@ body {
       var(--background)
     );
   }
-
-  .projects {
-    perspective: 200px;
-  }
-
+  /* sidemenu experiement */
   .square {
     font-size: 9vw;
     font-weight: bold;
@@ -134,5 +106,44 @@ body {
     transition-duration: 0.4s;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #fff;
+  }
+
+  /* filter for nav and sidebar */
+  .filtergang {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* lazy type shit delete everything below at some point */
+  .app__container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+  }
+
+  .app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skills-tooltip {
+    max-width: 300px !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px !important;
+    padding: 1rem !important;
+    color: #e2e2e2 !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    opacity: 1 !important;
+
+    @media screen and (min-width: 2000px) {
+      font-size: 1.75rem !important;
+      max-width: 500px !important;
+      line-height: 2 !important;
+    }
   }
 }

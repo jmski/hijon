@@ -21,9 +21,11 @@ const config: Config = {
         "bluey-dark": "#24305E",
       },
       fontFamily: {
-        machinepro: "var(--font-machinepro)",
-        oceanrush: "var(--font-oceanrush)",
+        voga: "var(--font-voga-medium)",
         inter: "var(--font-inter)",
+      },
+      letterSpacing: {
+        loose: ".7em",
       },
     },
   },

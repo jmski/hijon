@@ -5,24 +5,15 @@ import localFont from "next/font/local";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-const machinePro = localFont({
+const voga = localFont({
   src: [
     {
-      path: "../public/fonts/MachinePro.otf",
+      path: "../public/fonts/Voga-Medium.otf",
       weight: "400",
+      style: "medium",
     },
   ],
-  variable: "--font-machinepro",
-});
-
-const oceanRush = localFont({
-  src: [
-    {
-      path: "../public/fonts/OceanRush.otf",
-      weight: "400",
-    },
-  ],
-  variable: "--font-oceanrush",
+  variable: "--font-voga-medium",
 });
 
 export const metadata: Metadata = {
@@ -37,11 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} ${oceanRush.variable} ${machinePro.variable}`}
-      >
-        {children}
-      </body>
+      <body className={`${inter.className} ${voga.variable}`}>{children}</body>
     </html>
   );
 }

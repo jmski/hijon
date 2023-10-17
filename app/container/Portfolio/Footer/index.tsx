@@ -1,19 +1,18 @@
-import Image from "next/image";
 import React from "react";
-
-import logo from "@/app/assets/logo.svg";
+import Image from "next/image";
 import {
   footerInfo,
   footerMenu,
   footerSocial,
 } from "@/app/constants/footerData";
+import { images } from "@/app/constants";
 
 const Footer = () => (
   <section id="footer" className="p-8 md:p-4">
     <div className="flex justify-between items-start flex-row flex-wrap w-full text-left">
       <div className="mt-4 mx-0 sm:m-4 w-64 flex flex-col gap-4">
-        <a href="/">
-          <Image className="w-20" alt={"JMG Logo"} src={logo} />
+        <a href="#gang">
+          <Image alt={"JMG Logo"} src={images.logo_square} height={120} />
         </a>
         <p>
           Web Engineer <br /> All Rights Reserved

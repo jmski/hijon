@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import logo from "@/app/assets/logo.svg";
 
 interface SideMenuProps {
   menuOpen: boolean;
