@@ -20,6 +20,11 @@ const config: Config = {
         bluey: "#374785",
         "bluey-dark": "#24305E",
       },
+      fontFamily: {
+        machinepro: "var(--font-machinepro)",
+        oceanrush: "var(--font-oceanrush)",
+        inter: "var(--font-inter)",
+      },
     },
   },
   plugins: [],

@@ -119,7 +119,7 @@ body {
   .square {
     font-size: 9vw;
     font-weight: bold;
-    line-height: 6vw;
+    line-height: 12vw;
     text-align: left;
     transform-origin: left;
     transform: rotateY(-35deg);
@@ -130,7 +130,7 @@ body {
   .square:hover {
     color: transparent;
     cursor: pointer;
-    transform: rotateY(-33deg) translateZ(0) scale(1.1);
+    transform: rotateY(-25deg) translateZ(0) scale(1.2);
     transition-duration: 0.4s;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #fff;

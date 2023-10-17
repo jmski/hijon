@@ -10,13 +10,12 @@ interface SideMenuProps {
 const SideMenu: React.FC<SideMenuProps> = ({ menuOpen, navData }) => {
   return (
     <div
-      className={`bg-bluey w-1/2 h-screen fixed ease-in-out duration-500 z-20
+      className={`w-3/5 h-screen fixed ease-in-out duration-500 z-20 filtergang
       ${menuOpen ? "left-0 md:hidden" : "-left-full"}`}
     >
-      <ul className="px-4 pt-4">
-        <Image src={logo} alt="logo" color="#fff" />
+      <ul className="flex flex-col items-center justify-center h-full font-machinepro">
         {navData.map((element, index) => (
-          <li key={index} className="p-4 square hover:square">
+          <li key={index} className="p-4 square hover:square text-red-500">
             <a href={element.href}>{element.title}</a>
           </li>
         ))}

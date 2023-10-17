@@ -13,10 +13,10 @@ export interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ toggleMenu, menuOpen, navData }) => {
   return (
-    <nav className="w-full fixed z-10 px-4 py-1 md:px-10 filtergang">
+    <nav className="w-full fixed z-50 px-4 py-1 md:px-10 filtergang">
       <div className="flex items-center justify-between">
         <div>
-          <a>
+          <a href="#gang">
             <Image src={logo} alt="logo" height={50} />
           </a>
         </div>
@@ -33,6 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleMenu, menuOpen, navData }) => {
             textColor="text-bluey"
             label="Connect"
             link="/home"
+            showMobile={false}
           />
           <div className="md:hidden">
             {menuOpen ? (

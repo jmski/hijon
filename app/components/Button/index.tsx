@@ -5,6 +5,7 @@ export interface ButtonProps {
   textColor: string;
   label: string;
   link: string;
+  showMobile?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -12,12 +13,15 @@ const Button: React.FC<ButtonProps> = ({
   textColor,
   label,
   link,
+  showMobile,
   ...props
 }) => {
   return (
     <button
       type="button"
-      className={`${buttonColor} hover:bg-coral ${textColor} hover:text-bluey-dark ease-in-out duration-300 px-4 py-2 rounded-lg capitalize`}
+      className={`${buttonColor} hover:bg-coral ${textColor} ${
+        showMobile ? "flex md:hidden" : "hidden md:flex"
+      } hover:text-bluey-dark ease-in-out duration-300 px-4 py-2 rounded-lg capitalize`}
       {...props}
     >
       <a href={link}></a>
