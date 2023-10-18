@@ -22,8 +22,8 @@ const portfolio = () => {
         <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen} navData={navData} />
         <SideMenu menuOpen={menuOpen} navData={navData} />
         <Header />
-        <Service />
         <Brand />
+        <Service />
         <Featured />
         <Projects />
         <Testimonials />

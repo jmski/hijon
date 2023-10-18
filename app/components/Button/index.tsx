@@ -1,11 +1,12 @@
 import React from "react";
 
 export interface ButtonProps {
-  buttonColor: string;
+  buttonColor?: string;
   textColor: string;
   label: string;
   link: string;
   showMobile?: boolean;
+  hoverRed?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,15 +14,15 @@ const Button: React.FC<ButtonProps> = ({
   textColor,
   label,
   link,
-  showMobile,
+  hoverRed,
   ...props
 }) => {
   return (
     <button
       type="button"
-      className={`${buttonColor} hover:bg-coral ${textColor} ${
-        showMobile ? "flex md:hidden" : "hidden md:flex"
-      } hover:text-bluey-dark ease-in-out duration-300 px-4 py-2 rounded-lg capitalize`}
+      className={`${buttonColor} ${textColor} ${
+        hoverRed ? "hover:bg-teal-500" : "hover:bg-red-500"
+      } ease-in-out duration-300 px-4 py-2 border border-white capitalize shadow-md`}
       {...props}
     >
       <a href={link}></a>

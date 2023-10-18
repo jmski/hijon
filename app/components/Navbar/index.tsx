@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { PiHamburger, PiShoppingCartSimpleLight } from "react-icons/pi";
+import { PiHamburgerLight, PiShoppingCartSimpleLight } from "react-icons/pi";
 import { RiCloseLine } from "react-icons/ri";
 import { images } from "@/app/constants";
 
@@ -12,8 +12,8 @@ export interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ toggleMenu, menuOpen, navData }) => {
   return (
-    <nav className="w-full fixed z-50 px-4 py-1 md:px-10 filtergang">
-      <div className="flex items-center justify-between">
+    <nav className="w-full fixed z-50 filtergang">
+      <div className="p-4 md:p-2 flex items-center justify-between md:justify-around">
         <div>
           <a href="#gang">
             <Image src={images.logo_nav} alt="logo" height={40} />
@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleMenu, menuOpen, navData }) => {
         <ul className="md:flex items-center gap-8 hidden">
           {navData.map((element, index) => (
             <li
-              className="cursor-pointer uppercase text-xs tracking-loose font-light"
+              className="cursor-pointer uppercase text-xs tracking-loose font-light hover-underline-animation"
               key={index}
             >
               <a href={element.href}>{element.title}</a>
@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleMenu, menuOpen, navData }) => {
                 onClick={toggleMenu}
               />
             ) : (
-              <PiHamburger
+              <PiHamburgerLight
                 className="ease-in-out duration-500"
                 size={30}
                 onClick={toggleMenu}

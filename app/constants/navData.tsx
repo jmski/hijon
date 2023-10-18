@@ -4,8 +4,8 @@ interface NavDataProps {
 }
 
 export const navData: NavDataProps[] = [
-  { title: "home", href: "/home" },
+  { title: "course", href: "/course" },
   { title: "blog", href: "/blog" },
-  { title: "portfolio", href: "/portfolio" },
-  { title: "about", href: "/about" },
+  { title: "store", href: "/store" },
+  { title: "contact", href: "/contact" },
 ];
