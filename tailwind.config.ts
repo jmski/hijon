@@ -27,8 +27,26 @@ const config: Config = {
       letterSpacing: {
         loose: ".7em",
       },
+      padding: {
+        content: "2.5vw 6vw",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    themes: [
+      "acid",
+      "coffee",
+      {
+        mytheme: {
+          primary: "#a991f7",
+          secondary: "#f6d860",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "#ffffff",
+        },
+      },
+    ],
+  },
 };
 export default config;

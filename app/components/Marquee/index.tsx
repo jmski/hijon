@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const Marquee = () => {
-  function createLoopingElement(element, currentTranslation, speed) {
+  function createLoopingElement(
+    element: HTMLElement,
+    currentTranslation: number,
+    speed: number
+  ) {
     let direction = true;
     let scrollTop = 0;
     let metric = 100;
@@ -26,7 +30,7 @@ const Marquee = () => {
       });
     }
 
-    function lerpFunc(current, target, factor) {
+    function lerpFunc(current: number, target: number, factor: number) {
       lerp.current = current * (1 - factor) + target * factor;
     }
 
@@ -62,21 +66,38 @@ const Marquee = () => {
     };
   }
 
-  let elements = document.querySelectorAll(".item");
+  type TypeRef = {
+    current: HTMLElement[];
+  };
 
-  const loopingElement1 = createLoopingElement(elements[0], 0, 0.08);
-  const loopingElement2 = createLoopingElement(elements[1], -100, 0.08);
+  const elementsRef = useRef<TypeRef>({ current: [] });
+  // const imagesArrayRef = useRef<TypeRef>({ current: [] });
 
-  let imagesArray = document.querySelectorAll(".images-wrapper");
+  useEffect(() => {
+    elementsRef.current = Array.from(
+      document.querySelectorAll(".item")
+    ) as HTMLElement[];
+    // imagesArrayRef.current = Array.from(
+    //   document.querySelectorAll(".images-wrapper")
+    // ) as HTMLElement[];
+  }, []);
 
-  const loopingElement3 = createLoopingElement(imagesArray[0], 0, 0.1);
-  const loopingElement4 = createLoopingElement(imagesArray[1], -100, 0.1);
+  const loopingElement1 = createLoopingElement(elementsRef.current[0], 0, 0.08);
+  const loopingElement2 = createLoopingElement(
+    elementsRef.current[1],
+    -100,
+    0.08
+  );
+
+  // let imagesArray = document.querySelectorAll(".images-wrapper");
+  // const loopingElement3 = createLoopingElement(imagesArray[0], 0, 0.1);
+  // const loopingElement4 = createLoopingElement(imagesArray[1], -100, 0.1);
 
   function render() {
     loopingElement1.animate();
     loopingElement2.animate();
-    loopingElement3.animate();
-    loopingElement4.animate();
+    // loopingElement3.animate();
+    // loopingElement4.animate();
     window.requestAnimationFrame(render);
   }
 
@@ -92,8 +113,8 @@ const Marquee = () => {
           because reality is finally better than your dreams.&nbsp;
         </div>
         {/* <div className="bg-red-500 text-white absolute item">
-        Suck the deep.
-      </div> */}
+          Suck the deep.
+        </div> */}
       </div>
     </section>
   );

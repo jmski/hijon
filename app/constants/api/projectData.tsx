@@ -75,3 +75,5 @@ export const projectData: ProjectDataProps[] = [
     desc: "Created my first portfolio and website using TailwindCSS and Next.js.",
   },
 ];
+
+export default projectData;

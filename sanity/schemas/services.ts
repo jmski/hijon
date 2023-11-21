@@ -9,7 +9,7 @@ export const services = {
       type: "string",
     },
     {
-      name: "description",
+      name: "desc",
       title: "Description",
       type: "string",
     },

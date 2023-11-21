@@ -1,7 +1,7 @@
-/* Portfolio */
-export { default as Navbar } from "./Navbar";
-export { default as Button } from "./Button";
+/* Global */
 export { default as SideMenu } from "./SideMenu";
-export { default as ProjectCard } from "./ProjectCard";
+export { default as Button } from "./Button";
 
-/* Store */
+/* Experiemental */
+export { default as Marquee } from "./Marquee";
+export { default as Parallax } from "./Parallax";

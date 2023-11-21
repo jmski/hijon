@@ -25,3 +25,5 @@ export const featureData: FeatureDataProps[] = [
     preview: "https://fatherhoodfrenzy.com",
   },
 ];
+
+export default featureData;

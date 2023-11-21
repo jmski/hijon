@@ -4,7 +4,7 @@ import {
   footerInfo,
   footerMenu,
   footerSocial,
-} from "@/app/constants/footerData";
+} from "@/app/constants/api/footerData";
 import { images } from "@/app/constants";
 
 const Footer = () => (
