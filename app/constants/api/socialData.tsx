@@ -1,11 +1,11 @@
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { IoMdContact } from "react-icons/io";
+
 interface socialDataProps {
   name: string;
   icon: JSX.Element;
   link: string;
 }
-
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { IoMdContact } from "react-icons/io";
 
 export const socialData: socialDataProps[] = [
   {

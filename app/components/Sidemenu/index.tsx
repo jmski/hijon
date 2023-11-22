@@ -1,4 +1,4 @@
-import { Footer } from "@/app/portfolio/container";
+import { Footer } from "@/app/components/";
 import React from "react";
 
 interface SideMenuProps {
@@ -17,7 +17,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
   return (
     <div
       className={`w-full h-screen fixed ease-in-out duration-300 z-40 filtergang
-      ${menuOpen ? "left-0 md:hidden" : "-left-full"}`}
+      ${menuOpen ? "left-0 lg:hidden" : "-left-full"}`}
     >
       <ul className="flex flex-col w-4/5 pl-8 h-full bg-gradient-to-r from-zinc-800 to-transparent pt-20 gap-4">
         {navData.map((element, index) => (

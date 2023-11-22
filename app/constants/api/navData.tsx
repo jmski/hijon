@@ -3,7 +3,7 @@ import { FaGear } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 
-interface navDataProps {
+export interface navDataProps {
   title: string;
   href: string;
   subMenu?: { title: string; href: string }[];

@@ -2,38 +2,26 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { images } from "./constants";
-import { navData } from "./constants";
-import { Navbar } from "./components";
-import { Footer, Header, About, Service } from "./container";
-
-/**
-  Nav
-  Hero
-  About
-  Building Brand
-  Services (ish)
-    - Code Shop
-    - Site builds
-    - Consulting
-    - My Work
-    - Online Courses
-    - Reach Out
-  Latest Projects
-  Latest Blog Posts
-  Instagram Feed
-  Footer
-*/
+import { navData, socialData } from "./constants";
+import { NavBar } from "@/app/components";
+import { Footer, Header, About, Service } from "@/app/home/container";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <main className="text-white bg-base-100">
-      <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen} navData={navData} />
+      <NavBar
+        toggleMenu={toggleMenu}
+        menuOpen={menuOpen}
+        navData={navData}
+        socialData={socialData}
+        isMobile={true}
+        isPortfolio={false}
+      />
       <Header />
       <About />
       <Service />
-
 
       {/* Latest Blog Posts Carosel */}
       <div className="min-h-screen p-[6vw]">

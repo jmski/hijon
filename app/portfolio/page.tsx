@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { navData, socialData } from "@/app/constants";
-import { Footer } from "./container";
-import { NavBar, Page } from "./components";
+import { navData, socialData } from "@/app/constants/";
+import { Page } from "./components";
+import { NavBar, Footer } from "@/app/components";
 
 const Portfolio = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +19,7 @@ const Portfolio = () => {
         navData={navData}
         socialData={socialData}
         isMobile={true}
+        isPortfolio={true}
       />
       <Page />
       <Footer socialData={socialData} />
@@ -27,42 +28,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-
-// "use client";
-// import React, { useState } from "react";
-// import {
-//   Header,
-//   Service,
-//   Featured,
-//   Projects,
-//   Testimonials,
-//   Footer,
-//   Skills,
-//   Brand,
-// } from "../container";
-// import { Navbar, SideMenu } from "../components";
-// import { navData } from "../constants";
-
-// const Portfolio = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const toggleMenu = () => setMenuOpen(!menuOpen);
-
-//   return (
-//     <>
-//       <main className="gradient-bg">
-//         <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen} navData={navData} />
-//         <SideMenu menuOpen={menuOpen} navData={navData} />
-//         <Header />
-//         <Brand />
-//         <Service />
-//         <Featured />
-//         <Projects />
-//         <Testimonials />
-//         <Skills />
-//         <Footer />
-//       </main>
-//     </>
-//   );
-// };
-
-// export default Portfolio;
