@@ -1,12 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+import PageTransition from "./home/template";
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   variable: "--font-poppins",
 });
 
@@ -33,10 +33,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="coffee">
-      <body
-        className={`${inter.variable} ${voga.variable} ${poppins.className}`}
-      >
-        {children}
+      <body className={`${voga.variable} ${poppins.className}`}>
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

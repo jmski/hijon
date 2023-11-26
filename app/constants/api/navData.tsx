@@ -17,8 +17,8 @@ const navData: navDataProps[] = [
     icon: <FaHome />,
   },
   {
-    title: "About",
-    href: "/about",
+    title: "Work",
+    href: "/portfolio",
     icon: <IoMdContact />,
   },
   {

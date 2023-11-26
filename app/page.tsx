@@ -2,27 +2,14 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { images } from "./constants";
-import { navData, socialData } from "./constants";
-import { NavBar } from "@/app/components";
 import { Footer, Header, About, Service } from "@/app/home/container";
 
 const Home = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
-    <main className="text-white bg-base-100">
-      <NavBar
-        toggleMenu={toggleMenu}
-        menuOpen={menuOpen}
-        navData={navData}
-        socialData={socialData}
-        isMobile={true}
-        isPortfolio={false}
-      />
+    <div className="text-white bg-base-100">
       <Header />
       <About />
       <Service />
-
       {/* Latest Blog Posts Carosel */}
       <div className="min-h-screen p-[6vw]">
         <div className="">
@@ -58,7 +45,7 @@ const Home = () => {
 
       {/* Footer */}
       <Footer />
-    </main>
+    </div>
   );
 };
 export default Home;
