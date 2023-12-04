@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { urlFor, client } from "@/sanity/client";

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { urlFor, client } from "@/sanity/client";
 import Image from "next/image";

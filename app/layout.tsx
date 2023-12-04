@@ -1,8 +1,10 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
-import PageTransition from "./home/template";
+import { navData, socialData } from "@/app/constants";
+import { NavBar } from "@/app/components";
+import { Head } from "./head";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -21,21 +23,21 @@ const voga = localFont({
   variable: "--font-voga-medium",
 });
 
-export const metadata: Metadata = {
-  title: "Hi Jon",
-  description: "Welcome to my world",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" data-theme="coffee">
-      <body className={`${voga.variable} ${poppins.className}`}>
-        <PageTransition>{children}</PageTransition>
+      <body className={`${voga.variable} ${poppins.className} bg-base-100`}>
+        <Head />
+        <NavBar
+          navData={navData}
+          socialData={socialData}
+          isMobile={true}
+          isPortfolio={false}
+        />
+        {children}
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

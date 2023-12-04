@@ -1,11 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { SideMenu, GlitchText } from "@/app/components";
 
 interface NavBarProps {
-  menuOpen: boolean;
-  toggleMenu: () => void;
   navData: {
     title: string;
     icon: JSX.Element;
@@ -18,13 +17,14 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({
-  menuOpen,
-  toggleMenu,
   navData,
   socialData,
   isMobile,
   isPortfolio,
 }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <>
       <SideMenu

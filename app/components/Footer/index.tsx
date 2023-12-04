@@ -9,8 +9,8 @@ const Footer: React.FC<FooterProps> = ({ socialData, isMobile }) => {
   return (
     <div
       className={`${
-        isMobile ? "flex" : "hidden md:flex"
-      } fixed bottom-0 w-full flex-col justify-between z-0`}
+        isMobile ? "flex fixed bottom-0" : "hidden md:flex"
+      } w-full flex-col justify-between z-0`}
     >
       <div
         className={`${

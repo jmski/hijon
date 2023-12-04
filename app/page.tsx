@@ -1,12 +1,12 @@
-"use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { images } from "./constants";
 import { Footer, Header, About, Service } from "@/app/home/container";
+import { PageWrapper, Container } from "@/app/components";
 
 const Home = () => {
   return (
-    <div className="text-white bg-base-100">
+    <PageWrapper>
       <Header />
       <About />
       <Service />
@@ -45,7 +45,7 @@ const Home = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 export default Home;
