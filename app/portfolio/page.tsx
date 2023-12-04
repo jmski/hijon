@@ -1,15 +1,15 @@
-"use client";
 import React from "react";
 import { socialData } from "@/app/constants/";
-import { Page } from "./components";
-import { Footer } from "@/app/components";
+import { Footer, PageWrapper } from "@/app/components";
+import { Header, About } from "./container";
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
-      <Page />
+    <PageWrapper>
+      <Header />
+      <About />
       <Footer socialData={socialData} />
-    </div>
+    </PageWrapper>
   );
 };
 
