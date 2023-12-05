@@ -9,4 +9,3 @@ export { default as Container } from "./Container";
 
 /* Experiemental */
 export { default as Marquee } from "./Marquee";
-export { default as Parallax } from "./Parallax";

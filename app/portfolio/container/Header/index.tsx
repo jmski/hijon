@@ -18,7 +18,7 @@ const Header = () => {
           className="rounded-br-[10rem] rounded-tl-[10rem] shadow-xl w-full"
         />
       </motion.div>
-      <div className="flex justify-around uppercase overflow-x-hidden pt-4">
+      <div className="flex justify-around uppercase overflow-x-hidden pt-4 cursor-default">
         <motion.div
           whileInView={{ opacity: [0, 1], x: [-100, 0] }}
           transition={{ delay: 0.2, duration: 0.5 }}

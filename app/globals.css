@@ -47,7 +47,7 @@ body {
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  background: #ff00ff;
 }
 
 @layer utilities {
@@ -80,30 +80,6 @@ body {
   .hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
-
-  .parallax {
-    perspective: 800px;
-    height: 80vh;
-    overflow: hidden;
-    overflow-y: auto;
-  }
-
-  .preserve-3d {
-    transform-style: preserve-3d;
-  }
-
-  .skewY {
-    transform: rotateY(-45deg) translateZ(0) scale(1);
-    transform-origin: right center;
-    will-change: transform;
-    transition: ease-in-out 0.3s;
-    &:hover {
-      transform: rotateY(-30deg) translateZ(0) scale(1);
-      /* -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #fff;
-      color: transparent; */
-    }
   }
 
   /* Glitch Animation */
