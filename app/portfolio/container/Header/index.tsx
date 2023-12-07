@@ -1,24 +1,12 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { images } from "@/app/constants";
+import { Eye } from "@/app/components";
 
 const Header = () => {
   return (
     <>
-      <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className="flex justify-center items-center pt-24 max-w-[30vw] mx-auto"
-      >
-        <Image
-          src={images.avatar}
-          alt="Profile Picture of Jon Michael Gelua"
-          className="rounded-br-[10rem] rounded-tl-[10rem] shadow-xl w-full"
-        />
-      </motion.div>
-      <div className="flex justify-around uppercase overflow-x-hidden pt-4 cursor-default">
+      <div className="flex justify-around items-center uppercase overflow-x-hidden cursor-default">
         <motion.div
           whileInView={{ opacity: [0, 1], x: [-100, 0] }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -30,11 +18,18 @@ const Header = () => {
           <motion.p
             whileInView={{ opacity: [0, 1], y: [20, 0] }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-[2vw] text-stone-400"
+            className="text-[2svw] text-stone-400"
           >
             web dev and digital marketing
           </motion.p>
         </motion.div>
+
+        {/* Image as a backup*/}
+        {/* <Image
+          src={images.avatar}
+          alt="Profile Picture of Jon Michael Gelua"
+          className="rounded-br-[10rem] rounded-tl-[10rem] w-1/5 shadow-xl"
+        /> */}
         <motion.div
           whileInView={{ opacity: [0, 1], x: [100, 0] }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -46,7 +41,7 @@ const Header = () => {
           <motion.p
             whileInView={{ opacity: [0, 1], y: [20, 0] }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="text-[2vw] text-stone-400"
+            className="text-[2svw] text-stone-400"
           >
             Based in Canada
           </motion.p>
