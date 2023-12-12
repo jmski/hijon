@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Eye } from "@/app/components";
 
 const Header = () => {
   return (
     <>
-      <div className="flex justify-around items-center uppercase overflow-x-hidden cursor-default">
+      <div className="flex justify-around items-center uppercase overflow-x-hidden cursor-default pt-20 pb-5">
         <motion.div
           whileInView={{ opacity: [0, 1], x: [-100, 0] }}
           transition={{ delay: 0.2, duration: 0.5 }}

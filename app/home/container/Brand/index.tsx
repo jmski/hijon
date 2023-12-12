@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { urlFor, client } from "@/sanity/client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Marquee } from "@/app/components";
 
 interface BrandProps {
   _id: string;
@@ -24,7 +23,6 @@ const Brand = () => {
 
   return (
     <>
-      <Marquee />
       <div>
         <h3 className="uppercase tracking-lose text-md pl-4">
           Past Client Work

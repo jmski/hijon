@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { images } from "./constants";
-import { Footer, Header, About, Service } from "@/app/home/container";
+import { Footer, Header, About, Service, Featured } from "@/app/home/container";
 import { PageWrapper, Container } from "@/app/components";
 
 const Home = () => {
@@ -10,6 +10,7 @@ const Home = () => {
       <Header />
       <About />
       <Service />
+      <Featured />
       {/* Latest Blog Posts Carosel */}
       <div className="min-h-screen p-[6vw]">
         <div className="">
