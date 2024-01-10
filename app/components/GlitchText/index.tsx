@@ -12,7 +12,9 @@ const GlitchText: React.FC<GlitchTextProps> = ({ text, size, className }) => {
       data-text={text ? text : "JM CO."}
       className={`glitch ${size ? size : "text-xl"} ${className}`}
     >
-      <mark className={`glitch ${className}`}>{text ? text : "JM CO."}</mark>
+      <mark className={`glitch ${className} ${size ? size : "text-xl"}`}>
+        {text ? text : "JM CO."}
+      </mark>
     </span>
   );
 };

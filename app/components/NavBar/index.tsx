@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { SideMenu, GlitchText } from "@/app/components";
+import Link from "next/link";
 
 interface NavBarProps {
   navData: {
@@ -39,9 +40,9 @@ const NavBar: React.FC<NavBarProps> = ({
           <div className="fixed w-full px-8 py-4 lg:hidden z-50">
             <div className="flex flex-row-reverse justify-between">
               <div>
-                <a href="/portfolio">
+                <Link href="/portfolio">
                   <GlitchText />
-                </a>
+                </Link>
               </div>
               <div className="ease-in-out duration-300">
                 {!menuOpen ? (
@@ -61,9 +62,9 @@ const NavBar: React.FC<NavBarProps> = ({
                     key={index}
                     className="px-4 py-2 hover:text-pink-500 hover:bg-white hover:shadow-pink-500 shadow-lg rounded-md ease-in-out duration-200"
                   >
-                    <a href={element.href}>
+                    <Link href={element.href}>
                       <span className="text-lg">{element.icon}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -109,9 +110,9 @@ const NavBar: React.FC<NavBarProps> = ({
               </label>
             </div>
 
-            <a href="#" className="btn btn-ghost">
+            <Link href="#" className="btn btn-ghost">
               <GlitchText />
-            </a>
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 uppercase">
@@ -128,7 +129,9 @@ const NavBar: React.FC<NavBarProps> = ({
                               subIndex: number
                             ) => (
                               <li key={subIndex}>
-                                <a href={subElement.href}>{subElement.title}</a>
+                                <Link href={subElement.href}>
+                                  {subElement.title}
+                                </Link>
                               </li>
                             )
                           )}
@@ -139,7 +142,7 @@ const NavBar: React.FC<NavBarProps> = ({
                 } else {
                   return (
                     <li key={index}>
-                      <a href={element.href}>{element.title}</a>
+                      <Link href={element.href}>{element.title}</Link>
                     </li>
                   );
                 }

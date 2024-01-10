@@ -1,124 +1,74 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame,
+} from "framer-motion";
 
-const Marquee = () => {
-  function createLoopingElement(
-    element: HTMLElement,
-    currentTranslation: number,
-    speed: number
-  ) {
-    let direction = true;
-    let scrollTop = 0;
-    let metric = 100;
-    let lerp = {
-      current: currentTranslation,
-      target: currentTranslation,
-      factor: 0.2,
-    };
+interface MarqueeProps {
+  children: string;
+  baseVelocity: number;
+}
 
-    function events() {
-      let direction = 0;
-      window.addEventListener("scroll", (e) => {
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
-        if (scrollY > scrollTop) {
-          direction = 1;
-          lerp.target += speed * 5;
-        } else {
-          direction = -1;
-          lerp.target -= speed * 5;
-        }
-        scrollTop = scrollY <= 0 ? 0 : scrollY;
-      });
+const wrap = (min: number, max: number, v: number) => {
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
+
+const MarqueeText = ({ children, baseVelocity }: MarqueeProps) => {
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400,
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    clamp: false,
+  });
+
+  const x = useTransform(baseX, (v) => `${wrap(0, -25, v)}%`);
+
+  const directionFactor = useRef<number>(1);
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = 1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = -1;
     }
 
-    function lerpFunc(current: number, target: number, factor: number) {
-      lerp.current = current * (1 - factor) + target * factor;
-    }
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    baseX.set(baseX.get() + moveBy);
+  });
 
-    function goForward() {
-      lerp.target += speed;
-      if (lerp.target > metric) {
-        lerp.current -= metric * 2;
-        lerp.target -= metric * 2;
-      }
-    }
-
-    function goBackward() {
-      lerp.target -= speed;
-      if (lerp.target < -metric) {
-        lerp.current -= -metric * 2;
-        lerp.target -= -metric * 2;
-      }
-    }
-
-    function animate() {
-      direction ? goForward() : goBackward();
-      lerpFunc(lerp.current, lerp.target, lerp.factor);
-
-      if (element) {
-        element.style.transform = `translateX(${lerp.current}%)`;
-      }
-    }
-
-    events();
-
-    return {
-      animate,
-    };
-  }
-
-  type TypeRef = {
-    current: HTMLElement[];
-  };
-
-  const elementsRef = useRef<TypeRef>({ current: [] });
-  // const imagesArrayRef = useRef<TypeRef>({ current: [] });
-
-  useEffect(() => {
-    elementsRef.current = Array.from(
-      document.querySelectorAll(".item")
-    ) as HTMLElement[];
-    // imagesArrayRef.current = Array.from(
-    //   document.querySelectorAll(".images-wrapper")
-    // ) as HTMLElement[];
-  }, []);
-
-  const loopingElement1 = createLoopingElement(elementsRef.current[0], 0, 0.08);
-  const loopingElement2 = createLoopingElement(
-    elementsRef.current[1],
-    -100,
-    0.08
-  );
-
-  // let imagesArray = document.querySelectorAll(".images-wrapper");
-  // const loopingElement3 = createLoopingElement(imagesArray[0], 0, 0.1);
-  // const loopingElement4 = createLoopingElement(imagesArray[1], -100, 0.1);
-
-  function render() {
-    loopingElement1.animate();
-    loopingElement2.animate();
-    // loopingElement3.animate();
-    // loopingElement4.animate();
-    window.requestAnimationFrame(render);
-  }
-
-  render();
+  /** The number of times to repeat the child text should by dynamically calculated based on the size of the text and viewport.
+   * Likewise, the x motion value is currently wrapped between -20% and -45% to ensure it's always in the viewport.
+   * this 25% is derived from the face that we have four children (100% / 4)
+   * This would also want deriving from the  dynamically generated nuymber of children
+   */
 
   return (
-    <section className="overflow-hidden pt-20 h-56 w-full relative z-30">
-      <div className="flex whitespace-nowrap text-7xl font-voga tracking-widest rotate-6">
-        <div className="bg-white text-black absolute item">
-          You know you&apos;re in love when you can&apos;t fall asleep&nbsp;
-        </div>
-        <div className="absolute text-white item">
-          because reality is finally better than your dreams.&nbsp;
-        </div>
-        {/* <div className="bg-red-500 text-white absolute item">
-          Suck the deep.
-        </div> */}
-      </div>
-    </section>
+    <motion.div
+      style={{ x }}
+      className="whitespace-nowrap flex flex-nowrap tracking-[0.8] leading-[-2px]"
+    >
+      {Array.from(Array(4).keys()).map((i) => (
+        <span
+          key={i}
+          className="font-semibold uppercase text-6xl flex whitespace-nowrap flex-nowrap mr-8"
+        >
+          {children}
+        </span>
+      ))}
+    </motion.div>
   );
 };
 
-export default Marquee;
+export default MarqueeText;

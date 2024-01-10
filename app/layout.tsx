@@ -1,8 +1,6 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
-import { navData, socialData } from "@/app/constants";
-import { NavBar } from "@/app/components";
 import { Head } from "./head";
 
 const poppins = Poppins({
@@ -25,15 +23,9 @@ const voga = localFont({
 
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" data-theme="coffee">
-      <body className={`${voga.variable} ${poppins.className} bg-base-100`}>
+    <html lang="en">
+      <body className={`${voga.variable} ${poppins.className}`}>
         <Head />
-        <NavBar
-          navData={navData}
-          socialData={socialData}
-          isMobile={true}
-          isPortfolio={false}
-        />
         {children}
       </body>
     </html>
