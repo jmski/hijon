@@ -9,10 +9,14 @@ export const experiences = {
       type: "string",
     },
     {
-      name: "works",
-      title: "Works",
-      type: "array",
-      of: [{ type: "workExperience" }],
+      name: "company",
+      title: "Company",
+      type: "string",
+    },
+    {
+      name: "position",
+      title: "Position",
+      type: "string",
     },
   ],
 };

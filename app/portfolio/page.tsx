@@ -1,7 +1,15 @@
 import React from "react";
 import { socialData } from "@/app/constants/";
 import { Footer, PageWrapper, Eye } from "@/app/components";
-import { Header, About, Profile, Projects, Featured } from "./container";
+import {
+  Header,
+  About,
+  Profile,
+  Projects,
+  Featured,
+  Skills,
+  Experience,
+} from "../container/portfolio";
 
 const Portfolio = () => {
   return (
@@ -9,8 +17,7 @@ const Portfolio = () => {
       <Header />
       <About />
       <Profile />
-      <Featured />
-      <Projects />
+      <Experience />
       <Footer socialData={socialData} />
     </PageWrapper>
   );

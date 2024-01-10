@@ -1,8 +1,13 @@
 "use client";
 import React from "react";
-import { Profile, SocialLinks, StoreLinks, ResourceLinks } from "./container";
+import {
+  Profile,
+  SocialLinks,
+  StoreLinks,
+  ResourceLinks,
+} from "../container/sitemap";
 
-const SiteMap = () => {
+const ProfilePage = () => {
   return (
     <main className="bg-slate-200 w-full min-h-screen p-4 flex flex-col md:flex-row">
       <Profile />
@@ -17,4 +22,4 @@ const SiteMap = () => {
   );
 };
 
-export default SiteMap;
+export default ProfilePage;

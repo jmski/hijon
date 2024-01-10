@@ -105,7 +105,7 @@ const Eye = () => {
         </motion.div>
 
         {/* Right Eye Rinnegan */}
-        {/* <motion.div
+        <motion.div
           whileInView={{ scaleY: ["0%", "100%"] }}
           transition={{ delay: 0.2, duration: 1, type: "spring" }}
           className="bg-purple-300 flex justify-center items-center overflow-clip eye eye-shape eye-shape-right rinnegan"
@@ -121,7 +121,7 @@ const Eye = () => {
               </div>
             </div>
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
     </div>
   );
